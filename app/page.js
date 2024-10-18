@@ -1,50 +1,26 @@
-'use client';
-import Image from "next/image";
+
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import styles from "./page.module.css";
-import { useEffect, useState } from "react";
+ import styles from "./globals.css";
 
-export default function About() {
+export default function Home() {
 
-  const [users, setUsers] = useState([]);
-  useEffect(() => {
-    async function getUsers() {
-      const usersData = await fetch('https://jsonplaceholder.typicode.com/users');
-      setUsers(await usersData.json())
-    }
-    getUsers();
-  }, [])
+  
   return (
 
     <>
       <div className="container">
-        <h2> About Us </h2>
+        <h2> Home </h2>
        
         <div className="row mt-4">
-          <h4> Our Dedicated Employee's </h4>
-          <div className="col-3">
-            <ol>
-              <li> <b>Employee Name's </b> </li>
-              {
-                users.map((user) =>
-                  <li key={user.id}> {user.name} </li>
-                )
-              }
-
-            </ol>
-          </div>
-          <div className="col-9">
-            <ul>
-            <li> <b>Employee Email </b> </li>
-              {
-                users.map((user) =>
-                  <li key={user.id}> {user.email} </li>
-                )
-              }
-            </ul>
-          </div>
+         <p>
+         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+         </p>
+         <div className='col-lg-6 col-md-6'> 
+         <img src='pizza_123.jpg'/>
+         </div>
         </div>
 
       </div>
